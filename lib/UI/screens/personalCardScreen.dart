@@ -3,9 +3,8 @@ import 'package:jobsusageapi/UI/widgets/personalCardScreenWidgets/personalCardWi
 
 class PersonalCardScreen extends StatelessWidget {
   const PersonalCardScreen({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    return PersonalCard();
+    return PersonalCard(context);
   }
 }

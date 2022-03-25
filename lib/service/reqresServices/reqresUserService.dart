@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:jobsusageapi/models/reqresModel/ReqresMainModel.dart';
-import 'package:jobsusageapi/models/reqresModel/reqresUserModel.dart';
+
 
 
 class ReqresService {
@@ -14,5 +14,23 @@ class ReqresService {
     } else {
       print("Failed ${response.statusCode}");
     }
+  }
+}
+
+
+class UserApi {
+  static UserApi? _instance;
+
+  UserApi._();
+
+  static UserApi get instance {
+    _instance ??= UserApi._();
+    return _instance!;
+  }
+
+  Future<ReqresModel?> getAllUser() async {
+    final getUser = await http.get(Uri.parse('https://reqres.in/api/users?page=2'));
+    var jsonBody = ReqresModel.fromJson(jsonDecode(getUser.body));
+    return jsonBody;
   }
 }

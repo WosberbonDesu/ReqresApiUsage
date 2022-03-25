@@ -34,9 +34,11 @@ class _TextTilePageState extends State<TextTilePage> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    backgroundColor: Color(int.parse("0xFF{$widget.colorPerPerson}")),
-    appBar: transparentAppBar("Personal Card", 15),
+    // Color(int.parse("0xFF{$widget.colorPerPerson}"))
+    backgroundColor: Colors.red,
+    appBar: transparentAppBar("Personal Card", 15,context),
     body: paddingCard((){expandibleConsts().isExpanded ? shrinkTile() : expandTile();},buildText(context,widget.personalName,widget.workYear),widget.imagePath)
   );
+
 
 }

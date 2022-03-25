@@ -15,24 +15,28 @@ class ActivityListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(8, 16, 8, 16),
-      child: GestureDetector(
-        onTap: onTab, //ыоукд эфффцууу ФФФФФФФФФФФФФФФФФФ
-        child: Stack(
-            alignment: Alignment.bottomRight,
-            children: <Widget>[
 
+    return Padding(
+
+      padding: const EdgeInsets.fromLTRB(8, 16, 8, 16),
+
+      child: GestureDetector(
+
+        onTap: onTab, //ыоукд эфффцууу ФФФФФФФФФФФФФФФФФФ
+
+        child: Stack(
+
+            alignment: Alignment.bottomRight,
+
+            children: <Widget>[
               Card(
                   child: Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(
                               const Radius.circular(5.0)
                           ),
-                          gradient : LinearGradient(colors: [color!, gradient!],
-                              begin: Alignment.topCenter,
-                              end: Alignment.topRight)
-
+                          gradient : SweepGradient(colors: [Colors.deepPurple,Colors.lightBlueAccent,color!, gradient!,Colors.black,Colors.deepOrangeAccent],
+                              endAngle: 0.5)
                       ),
 
                       child: Padding(

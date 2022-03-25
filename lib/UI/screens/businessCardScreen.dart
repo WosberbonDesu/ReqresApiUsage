@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:jobsusageapi/UI/screens/personalCardScreen.dart';
+import 'package:jobsusageapi/UI/screens/providerUsageScreen.dart';
 import 'package:jobsusageapi/UI/widgets/appbar/transparentAppBar.dart';
 import 'package:jobsusageapi/UI/widgets/businessCardScreen/customListTile.dart';
 import 'package:jobsusageapi/UI/widgets/pageRoute/customPageRoute.dart';
@@ -53,7 +54,7 @@ class _BusinessCardScreenState extends State<BusinessCardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: transparentAppBar("Business App",15),
+        appBar: transparentAppBar("Click Me",15,context),
         body: isLoading == null
             ? const Center(
           child: CircularProgressIndicator(),
@@ -69,10 +70,9 @@ class _BusinessCardScreenState extends State<BusinessCardScreen> {
                 color: const Color.fromRGBO(82, 66, 232, 1),
                 gradient: const Color.fromRGBO(58, 63, 255, 1),
                 onTab: () {
-
-               Navigator.push(context,CustomPageRoute(child: TextTilePage(users[index]!.firstName!+" "+ users[index]!.lastName!,
-                   users[index]!.avatar!,colors[index]!.year.toString(),
-                   colors[index]!.color!.substring(1)),direction: AxisDirection.down));
+                  Navigator.push(context,CustomPageRoute(child: TextTilePage(users[index]!.firstName!+" "+ users[index]!.lastName!,
+                      users[index]!.avatar!,colors[index]!.year.toString(),
+                      colors[index]!.color!.substring(1)),direction: AxisDirection.down));
                 }
             );
           },
@@ -82,3 +82,10 @@ class _BusinessCardScreenState extends State<BusinessCardScreen> {
     );
   }
 }
+
+/*
+  Navigator.push(context,CustomPageRoute(child: TextTilePage(users[index]!.firstName!+" "+ users[index]!.lastName!,
+                   users[index]!.avatar!,colors[index]!.year.toString(),
+                   colors[index]!.color!.substring(1)),direction: AxisDirection.down));
+
+ */
