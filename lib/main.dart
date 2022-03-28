@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:jobsusageapi/UI/screens/businessCardScreen.dart';
-import 'UI/screens/expandiblePersonalCard.dart';
+import 'package:jobsusageapi/UI/screens/loginPage/loginPage.dart';
+import 'package:jobsusageapi/models/login/loginModel.dart';
+import 'package:provider/provider.dart';
 
-void main() {
-  runApp(MyApp());
+
+void main() {runApp(MultiProvider(providers:[
+  ChangeNotifierProvider(create: (_)=>LoginModel())]
+  ,child: Welcome(),));
 }
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return  MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: BusinessCardScreen(),
-    );
-  }
-}
+
 
 

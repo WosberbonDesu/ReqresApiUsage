@@ -83,7 +83,11 @@ class _BusinessCardScreenState extends State<BusinessCardScreen> {
   }
 }
 
-/*
+
+
+
+
+/* U NIMANIE
   Navigator.push(context,CustomPageRoute(child: TextTilePage(users[index]!.firstName!+" "+ users[index]!.lastName!,
                    users[index]!.avatar!,colors[index]!.year.toString(),
                    colors[index]!.color!.substring(1)),direction: AxisDirection.down));

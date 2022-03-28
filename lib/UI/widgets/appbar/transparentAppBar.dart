@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jobsusageapi/UI/screens/personalCardScreen.dart';
 import 'package:jobsusageapi/UI/widgets/appbar/preferredSize.dart';
+import 'package:jobsusageapi/UI/widgets/notification/local_notification_widget.dart';
 import 'package:jobsusageapi/UI/widgets/pageRoute/customPageRoute.dart';
 import 'package:jobsusageapi/business/constants/colors.dart';
 
@@ -21,8 +22,13 @@ AppBar transparentAppBar(String title, double elevValue,BuildContext context){
     backgroundColor: ColorConsts.backgroundColor,
     title: InkWell(
         child: Text(title),
-      onTap: (){
-          Navigator.push(context,CustomPageRoute(child: PersonalCardScreen(),direction: AxisDirection.left));
+      onTap: ()async{
+        await NotificationWidget.showNotifications(
+            title: "App",
+            body: "Welcome user welcome our program",
+            payload: "app.flutter"
+        );
+          //Navigator.push(context,CustomPageRoute(child: PersonalCardScreen(),direction: AxisDirection.left));
       },
     ),
     centerTitle: true,

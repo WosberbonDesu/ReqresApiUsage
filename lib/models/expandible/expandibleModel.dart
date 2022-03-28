@@ -18,7 +18,7 @@ final basicTiles = <BasicTile>[
     BasicTile(title: '2020', tiles: buildMonths()),
     BasicTile(title: '2021', tiles: buildMonths()),
     BasicTile(title: '2022'),
-    BasicTile(title: '2023'),
+    const BasicTile(title: '2023'),
   ]),
 ];
 
